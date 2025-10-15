@@ -1,0 +1,179 @@
+
+
+/* Body Background */
+body {
+    /* Background image path - adjust as needed */
+    background-image: url('../images/rugby3.jpg');
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #2a5c8b; /* Fallback */
+    
+    /* Option A: Cover entire viewport (default) */
+    background-size: cover;
+    min-height: 100vh;
+    
+    /* Option B: Specific dimensions */
+    background-size: 2000,800px;
+     
+}
+
+/* Main matches container */
+.matches-section {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Month headers */
+.month-header {
+    color: #2a5c8b;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Individual match cards */
+.match-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #2a5c8b;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.match-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Competition title */
+.competition {
+    color: #1a3d7c;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Team display */
+.match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.team {
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-shadow: none;
+}
+
+.home { 
+    background: #f0f0f0; 
+    color: #000;
+}
+
+.away { 
+    background: #f8f8f8; 
+    color: #333;
+}
+
+.vs { 
+    color: #666;
+    font-weight: bold;
+}
+
+/* Match details grid */
+.match-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+    color: #555;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Action buttons */
+.match-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-preview {
+    background: #2a5c8b;
+    color: white;
+}
+
+.btn-preview:hover {
+    background: #1a3d7c;
+}
+
+.btn-tickets {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-tickets:hover {
+    background: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+    
+    .matches-section {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .match-teams {
+        flex-direction: column;
+    }
+    
+    .match-actions {
+        justify-content: center;
+    }
+    
+    .match-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile landscape optimization */
+@media (max-width: 600px) and (orientation: landscape) {
+    .matches-section {
+        padding: 0.5rem;
+    }
+}

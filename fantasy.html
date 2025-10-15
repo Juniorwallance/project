@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrumLife | Fantasy League Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fantasy.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <img src="images/logo3.jpg" alt="ScrumLife Logo" class="logo">
+            <h1>RugbyConnect Community Platform</h1>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="match.html">Matches</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="fantasy.html" aria-current="page">Fantasy League</a></li>
+                <li><a href="highlights.html">Highlights</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#registration">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="hero-section">
+            <h2 class="section-title">Fantasy League</h2>
+            <div class="hero-content">
+                <p>Build your ultimate XV within budget. Pick players by position, manage your spend, and compete on the leaderboard.</p>
+            </div>
+        </section>
+
+        <section class="fantasy-registration" id="registration">
+            <h3 class="section-title">Register for Fantasy League</h3>
+            <form id="fantasy-registration-form" novalidate>
+                <div class="form-group">
+                    <label for="reg-fullname">Full name</label>
+                    <input id="reg-fullname" name="fullName" type="text" required placeholder="Alex Smith" autocomplete="name">
+                    <small class="field-hint">Use your real name for the public leaderboard.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input id="reg-email" name="email" type="email" required placeholder="alex@example.com" autocomplete="email">
+                    <small class="field-hint">We'll only use this for league updates.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-teamname">Team name</label>
+                    <input id="reg-teamname" name="teamName" type="text" required placeholder="Mighty XV">
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-country">Country</label>
+                    <input id="reg-country" name="country" type="text" placeholder="e.g., South Africa">
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-favpos">Preferred positions (optional)</label>
+                    <select id="reg-favpos" name="preferredPositions" multiple size="5" aria-describedby="favpos-help">
+                        <option value="PROP">Prop</option>
+                        <option value="HOOKER">Hooker</option>
+                        <option value="LOCK">Lock</option>
+                        <option value="FLANKER">Flanker</option>
+                        <option value="NUMBER_8">Number 8</option>
+                        <option value="SCRUM_HALF">Scrum-half</option>
+                        <option value="FLY_HALF">Fly-half</option>
+                        <option value="CENTER">Center</option>
+                        <option value="WING">Wing</option>
+                        <option value="FULLBACK">Fullback</option>
+                    </select>
+                    <small id="favpos-help" class="field-hint">Hold Ctrl/Cmd to select multiple.</small>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input id="reg-consent" name="consent" type="checkbox" required>
+                    <label for="reg-consent">I agree to the rules and terms of the Fantasy League.</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="register-submit">Register</button>
+                    <button type="button" id="registration-clear" class="secondary">Clear</button>
+                </div>
+
+                <div id="registration-status" role="status" aria-live="polite"></div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('fantasy-registration-form');
+            const clearBtn = document.getElementById('registration-clear');
+            const statusDiv = document.getElementById('registration-status');
+            
+            // Clear form function
+            clearBtn.addEventListener('click', function() {
+                form.reset();
+                statusDiv.textContent = '';
+                statusDiv.className = '';
+            });
+            
+            // Form submission handler
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                let isValid = true;
+                const requiredFields = form.querySelectorAll('[required]');
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = '#e74c3c';
+                    } else {
+                        field.style.borderColor = '#ddd';
+                    }
+                });
+                
+                // Check consent checkbox
+                const consentCheckbox = document.getElementById('reg-consent');
+                if (!consentCheckbox.checked) {
+                    isValid = false;
+                    consentCheckbox.style.outline = '2px solid #e74c3c';
+                } else {
+                    consentCheckbox.style.outline = 'none';
+                }
+                
+                if (isValid) {
+                    // Simulate form submission
+                    statusDiv.textContent = 'Registration successful! Redirecting to Fantasy League...';
+                    statusDiv.className = 'success';
+                    
+                    // Redirect to fantasy league page after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = 'fantasy.html'; // Change to your fantasy league page URL
+                    }, 2000);
+                } else {
+                    statusDiv.textContent = 'Please fill in all required fields.';
+                    statusDiv.className = 'error';
+                }
+            });
+            
+            // Real-time validation for required fields
+            const requiredFields = form.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                field.addEventListener('input', function() {
+                    if (this.value.trim()) {
+                        this.style.borderColor = '#27ae60';
+                    } else {
+                        this.style.borderColor = '#ddd';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
