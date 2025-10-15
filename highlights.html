@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/highlights.css">
     <script src="js/main.js" defer></script>
+    <script src="highlights.js" defer></script>
 </head>
 <body>
     <header class="main-header">
@@ -46,126 +47,16 @@
                 <button class="filter-btn" data-filter="recent">Recent</button>
                 <button class="filter-btn" data-filter="classic">Classic</button>
             </div>
+            <div style="margin-top: 15px;">
+                <input type="text" id="search-input" placeholder="Search highlights..." 
+                       style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; width: 300px; max-width: 100%;">
+            </div>
         </section>
 
         <section class="highlights-grid">
-            <div class="highlight-card" data-category="try recent">
-                <div class="highlight-thumbnail">
-                    <img src="images/try-highlight.jpg" alt="Amazing try by National Team">
-                    <div class="play-button">▶</div>
-                    <div class="video-duration">2:45</div>
-                </div>
-                <div class="highlight-info">
-                    <h3>Incredible Team Try - National Championship</h3>
-                    <p class="highlight-meta">Posted: October 15, 2025 • Views: 24.5K</p>
-                    <p class="highlight-desc">The national team scores an amazing try after 15 phases of play in the championship final.</p>
-                    <div class="highlight-actions">
-                        <button class="watch-btn">Watch Now</button>
-                        <button class="save-btn">Save</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Additional Highlight -->
-            <div class="highlight-card" data-category="try recent">
-                <div class="highlight-thumbnail">
-                    <img src="images/rugby7.jpg" alt="Spectacular solo try">
-                    <div class="play-button">▶</div>
-                    <div class="video-duration">2:10</div>
-                </div>
-                <div class="highlight-info">
-                    <h3>Spectacular Solo Try - Youth League</h3>
-                    <p class="highlight-meta">Posted: October 18, 2025 • Views: 12.3K</p>
-                    <p class="highlight-desc">A young player beats five defenders to score a memorable solo try in the Youth League finals.</p>
-                    <div class="highlight-actions">
-                        <button class="watch-btn">Watch Now</button>
-                        <button class="save-btn">Save</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="highlight-card" data-category="tackle recent">
-                <div class="highlight-thumbnail">
-                    <img src="images/tackle-highlight.jpg" alt="Massive tackle in Kenya Cup">
-                    <div class="play-button">▶</div>
-                    <div class="video-duration">1:15</div>
-                </div>
-                <div class="highlight-info">
-                    <h3>Game-Saving Tackle - Kenya Cup Semifinal</h3>
-                    <p class="highlight-meta">Posted: October 12, 2025 • Views: 18.2K</p>
-                    <p class="highlight-desc">An incredible try-saving tackle that secured victory for KCB in the dying minutes.</p>
-                    <div class="highlight-actions">
-                        <button class="watch-btn">Watch Now</button>
-                        <button class="save-btn">Save</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="highlight-card" data-category="kick recent">
-                <div class="highlight-thumbnail">
-                    <img src="images/kick-highlight.jpg" alt="Match-winning penalty kick">
-                    <div class="play-button">▶</div>
-                    <div class="video-duration">1:30</div>
-                </div>
-                <div class="highlight-info">
-                    <h3>Match-Winning Penalty From 50m</h3>
-                    <p class="highlight-meta">Posted: October 10, 2025 • Views: 22.7K</p>
-                    <p class="highlight-desc">A clutch penalty kick from the halfway line to win the match after the siren.</p>
-                    <div class="highlight-actions">
-                        <button class="watch-btn">Watch Now</button>
-                        <button class="save-btn">Save</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="highlight-card" data-category="try classic">
-                <div class="highlight-thumbnail">
-                    <img src="images/classic-highlight.jpg" alt="Classic try from 2019">
-                    <div class="play-button">▶</div>
-                    <div class="video-duration">3:20</div>
-                </div>
-                <div class="highlight-info">
-                    <h3>Classic: The Try That Won The 2019 Championship</h3>
-                    <p class="highlight-meta">Posted: September 28, 2025 • Views: 156K</p>
-                    <p class="highlight-desc">Relive the iconic try that secured the championship in the final seconds of extra time.</p>
-                    <div class="highlight-actions">
-                        <button class="watch-btn">Watch Now</button>
-                        <button class="save-btn">Save</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="highlight-card" data-category="tackle classic">
-                <div class="highlight-thumbnail">
-                    <img src="images/classic-tackle.jpg" alt="Classic defensive stand">
-                    <div class="play-button">▶</div>
-                    <div class="video-duration">2:15</div>
-                </div>
-                <div class="highlight-info">
-                    <h3>Defensive Masterclass - 2018 Final</h3>
-                    <p class="highlight-meta">Posted: September 20, 2025 • Views: 98.3K</p>
-                    <p class="highlight-desc">An incredible 20-phase defensive stand that secured the championship.</p>
-                    <div class="highlight-actions">
-                        <button class="watch-btn">Watch Now</button>
-                        <button class="save-btn">Save</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="highlight-card" data-category="kick classic">
-                <div class="highlight-thumbnail">
-                    <img src="images/classic-kick.jpg" alt="Historic drop goal">
-                    <div class="play-button">▶</div>
-                    <div class="video-duration">1:45</div>
-                </div>
-                <div class="highlight-info">
-                    <h3>Historic Drop Goal - 2015 World Cup</h3>
-                    <p class="highlight-meta">Posted: September 15, 2025 • Views: 210K</p>
-                    <p class="highlight-desc">The iconic drop goal that secured victory against all odds in the World Cup quarterfinal.</p>
-                    <div class="highlight-actions">
-                        <button class="watch-btn">Watch Now</button>
-                        <button class="save-btn">Save</button>
-                    </div>
-                </div>
+            <!-- Highlights will be dynamically loaded here by highlights.js -->
+            <div id="loading-indicator" style="text-align: center; padding: 40px; color: #666; display: none;">
+                Loading highlights...
             </div>
         </section>
 
@@ -182,41 +73,5 @@
     <footer class="main-footer">
         <p>&copy; 2025 ScrumLife Rugby. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Filter functionality for highlights
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const highlightCards = document.querySelectorAll('.highlight-card');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filter = this.dataset.filter;
-                    
-                    // Show/hide cards based on filter
-                    highlightCards.forEach(card => {
-                        if (filter === 'all' || card.dataset.category.includes(filter)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Simulate video play functionality
-            const watchButtons = document.querySelectorAll('.watch-btn');
-            watchButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    alert('Video playback would start here. In a real implementation, this would open a video player.');
-                });
-            });
-        });
-    </script>
 </body>
 </html>
