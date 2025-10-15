@@ -174,45 +174,43 @@
             <p>Subscribe to get notified when new highlights are added</p>
             <form class="newsletter-form">
                 <input type="email" placeholder="Enter your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <p>&copy; 2025 ScrumLife Rugby. All rights reserved.</p>
-    </footer>
-
+                <button type="submit">Subscrib    <script src="highlights.js"></script>
     <script>
-        // Filter functionality for highlights
+        // Additional functionality for highlights page
         document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const highlightCards = document.querySelectorAll('.highlight-card');
+            // Add search functionality
+            const searchContainer = document.querySelector('.highlights-filters');
+            if (searchContainer) {
+                const searchInput = document.createElement('input');
+                searchInput.type = 'text';
+                searchInput.id = 'search-input';
+                searchInput.placeholder = 'Search highlights...';
+                searchInput.style.cssText = `
+                    padding: 8px 12px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    margin-left: 20px;
+                    width: 250px;
+                `;
+                searchContainer.appendChild(searchInput);
+            }
             
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filter = this.dataset.filter;
-                    
-                    // Show/hide cards based on filter
-                    highlightCards.forEach(card => {
-                        if (filter === 'all' || card.dataset.category.includes(filter)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Simulate video play functionality
-            const watchButtons = document.querySelectorAll('.watch-btn');
-            watchButtons.forEach(button => {
-                button.addEventListener('click', function() {
+            // Add loading indicator
+            const grid = document.querySelector('.highlights-grid');
+            if (grid) {
+                const loadingDiv = document.createElement('div');
+                loadingDiv.id = 'loading-indicator';
+                loadingDiv.style.cssText = `
+                    text-align: center;
+                    padding: 40px;
+                    color: #666;
+                    display: none;
+                `;
+                loadingDiv.textContent = 'Loading highlights...';
+                grid.appendChild(loadingDiv);
+            }
+        });
+    </script>tListener('click', function() {
                     alert('Video playback would start here. In a real implementation, this would open a video player.');
                 });
             });
